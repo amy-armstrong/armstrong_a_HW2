@@ -69,6 +69,7 @@ export class Counter {
         
     reset() {
             this.count = 0;
+            this.update();
         }
 
     update() {
