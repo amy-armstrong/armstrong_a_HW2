@@ -40,7 +40,11 @@ export class Counter {
         // container.appeandchild(new buttons)
 
         //add event listener
-        this.button.addEventListener("click", ()=> this.increment());
+        this.incBtn.addEventListener("click", ()=> this.increment());
+        this.decBtn.addEventListener("click", ()=> this.decrement());
+        this.resetBtn.addEventListener("click", ()=> this.reset());
+
+
 
         // add new event listeners
 
