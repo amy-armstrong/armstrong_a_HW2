@@ -77,6 +77,10 @@ export class Counter {
         this.display.textContent = `Count: ${this.count}`;
     
         //classList.toggle() this.count===0
+        //if count isat ZERO
+        this.decBtn.classList.toggle('inactive'), this.count === 0;
+        this.resetBtn.classList.toggle('inactive'), this.count === 0;
+
     }
 }
 
