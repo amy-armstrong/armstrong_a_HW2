@@ -37,7 +37,7 @@ export class Counter {
 
         //add event listener
         this.button.addEventListener("click", ()=> this.increment());
-        
+
         // add new event listeners
 
         // when this first gets mounted update the display
@@ -72,7 +72,7 @@ export class Counter {
 //StepCounter is subclass
 
 class StepCounter extends Counter {
-    counstructor(selector, initialValue = 0) {
+    constructor(selector, initialValue = 0) {
         super(selector, initialValue);
         //add step property
         //this.step = step;
