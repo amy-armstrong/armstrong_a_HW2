@@ -8,8 +8,12 @@ export class Counter {
     mount() {
         const container = document.querySelector(this.selector);
         
+        // button elementfs
         this.display = document.createElement('div');
-        this.button = document.createElement('button');
+        this.incBtn = document.createElement('button');
+        this.decBtn = document.createElement('button');
+        this.resetBtn = document.createElement('button');
+
 
         // add buttons, decrement, reset
         // this.decrement
@@ -17,6 +21,10 @@ export class Counter {
 
         // set button text
         this.button.textContent = "increment";
+        this.button.textContent = "decrement";
+        this.button.textContent = "reset";
+
+
         // set new button text
         // this.decrement...
         // this.reset...
@@ -29,6 +37,7 @@ export class Counter {
 
         //add event listener
         this.button.addEventListener("click", ()=> this.increment());
+        
         // add new event listeners
 
         // when this first gets mounted update the display
