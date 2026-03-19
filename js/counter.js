@@ -88,14 +88,19 @@ export class Counter {
 //StepCounter is subclass
 
 class StepCounter extends Counter {
-    constructor(selector, initialValue = 0) {
+    constructor(selector, initialValue = 0,) {
         super(selector, initialValue);
         //add step property
-        //this.step = step;
+        this.step = step;
 
     }
-    //increment(){}
-    //decrement(){}
+    increment(){
+        this.update();
+    }
+
+    decrement(){
+        this.update();
+    }
 }
 
 //homework notes
