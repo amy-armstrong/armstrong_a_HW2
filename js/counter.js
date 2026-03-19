@@ -59,9 +59,12 @@ export class Counter {
     }
 
     decrement() {
+            if (this.count >0) {
+               this.count--;
+            this.update(); 
+            }
             //if statement to prevent lower than 0
-            this.count--;
-            this.update();
+            
          }
         
     reset() {
