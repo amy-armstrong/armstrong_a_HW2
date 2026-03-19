@@ -20,9 +20,9 @@ export class Counter {
         // this.reset
 
         // set button text
-        this.button.textContent = "increment";
-        this.button.textContent = "decrement";
-        this.button.textContent = "reset";
+        this.incBtn.textContent = "increment";
+        this.decBtn.textContent = "decrement";
+        this.resetBtn.textContent = "reset";
 
 
         // set new button text
@@ -31,7 +31,11 @@ export class Counter {
 
         //append display and button into container div
         container.appendChild(this.display);
-        container.appendChild(this.button);
+        container.appendChild(this.incBtn);
+        container.appendChild(this.decBtn);
+        container.appendChild(this.resetBtn);
+
+
         // append new buttons
         // container.appeandchild(new buttons)
 
