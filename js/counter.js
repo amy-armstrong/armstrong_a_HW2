@@ -58,15 +58,15 @@ export class Counter {
         this.update();
     }
 
-        // decrement() {
-            // if statement to prevent lower than 0
-            // this.count--;
-            // this.update();
-        // }
+    decrement() {
+            //if statement to prevent lower than 0
+            this.count--;
+            this.update();
+         }
         
-        // reset() {
-            // this.count = 0;
-        // }
+    reset() {
+            this.count = 0;
+        }
 
     update() {
         // set initial display content
