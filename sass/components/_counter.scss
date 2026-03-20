@@ -62,4 +62,23 @@
             box-shadow: none;
         }
     }
+
+    .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #2ecc71; // Emerald Green
+        border-radius: 50%;
+        display: inline-block;
+        animation: pulse-green 2s infinite;
+    }
+}
+
+
 } 
