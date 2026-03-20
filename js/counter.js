@@ -61,10 +61,9 @@ export class Counter {
     decrement() {
             if (this.count >0) {
                this.count--;
-            this.update(); 
             }
+            this.update(); 
             //if statement to prevent lower than 0
-            
          }
         
     reset() {
@@ -75,7 +74,7 @@ export class Counter {
     update() {
         // set initial display content
         this.display.textContent = `Count: ${this.count}`;
-    
+        const isZero = this.count === 0;
         //classList.toggle() this.count===0
         //if count isat ZERO
         this.decBtn.classList.toggle('inactive'), this.count === 0;
@@ -87,18 +86,24 @@ export class Counter {
 //Counter is Super Class
 //StepCounter is subclass
 
-class StepCounter extends Counter {
-    constructor(selector, initialValue = 0,) {
+export class StepCounter extends Counter {
+    constructor(selector, initialValue = 0, step = 1) {
         super(selector, initialValue);
         //add step property
         this.step = step;
 
     }
     increment(){
+        this.count += this.step;
         this.update();
     }
 
     decrement(){
+        if (this.count - this.step >= 0) {
+            this.count -= this.step;
+        } else {
+            this.count = 0;
+        }
         this.update();
     }
 }
