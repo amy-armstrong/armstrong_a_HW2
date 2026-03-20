@@ -14,20 +14,10 @@ export class Counter {
         this.decBtn = document.createElement('button');
         this.resetBtn = document.createElement('button');
 
-
-        // add buttons, decrement, reset
-        // this.decrement
-        // this.reset
-
         // set button text
         this.incBtn.textContent = "increment";
         this.decBtn.textContent = "decrement";
         this.resetBtn.textContent = "reset";
-
-
-        // set new button text
-        // this.decrement...
-        // this.reset...
 
         //append display and button into container div
         container.appendChild(this.display);
@@ -36,17 +26,10 @@ export class Counter {
         container.appendChild(this.resetBtn);
 
 
-        // append new buttons
-        // container.appeandchild(new buttons)
-
         //add event listener
         this.incBtn.addEventListener("click", ()=> this.increment());
         this.decBtn.addEventListener("click", ()=> this.decrement());
         this.resetBtn.addEventListener("click", ()=> this.reset());
-
-
-
-        // add new event listeners
 
         // when this first gets mounted update the display
         this.update();
@@ -63,7 +46,6 @@ export class Counter {
                this.count--;
             }
             this.update(); 
-            //if statement to prevent lower than 0
          }
         
     reset() {
@@ -72,10 +54,9 @@ export class Counter {
         }
 
     update() {
-        // set initial display content
         this.display.textContent = `Count: ${this.count}`;
         const isZero = this.count === 0;
-        //classList.toggle() this.count===0
+
         //if count isat ZERO
         this.decBtn.classList.toggle('inactive'), this.count === 0;
         this.resetBtn.classList.toggle('inactive'), this.count === 0;
@@ -107,23 +88,3 @@ export class StepCounter extends Counter {
         this.update();
     }
 }
-
-//homework notes
-//when counter goes to 0 add a class that will prevent user from dropping it to zero or resetting, as 0 is the base state
-//design a full webpage that documents that component
-//make website explain counter and how to use it
-//create a new stepper class using inheritance
-//takes a parameter called step which will dictate how much the counter will increment by
-//minimum of 10 commits
-//branch for each feature
-//branch commits spaced out
-//repo should show development
-
-//repo should show:
-//week 8 skeleton must be finished
-//week 9 core logic must be finished
-//week 10 must be finished
-//PROGRESSION
-//NO VIBE CODING
-
-//someone should be able to go to site and learn how it is done so that they can add it to their project
