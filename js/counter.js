@@ -95,35 +95,3 @@ export class StepCounter extends Counter {
     }
     increment(){
         this.count += this.step;
-        this.update();
-    }
-
-    decrement(){
-        if (this.count - this.step >= 0) {
-            this.count -= this.step;
-        } else {
-            this.count = 0;
-        }
-        this.update();
-    }
-}
-
-//homework notes
-//when counter goes to 0 add a class that will prevent user from dropping it to zero or resetting, as 0 is the base state
-//design a full webpage that documents that component
-//make website explain counter and how to use it
-//create a new stepper class using inheritance
-//takes a parameter called step which will dictate how much the counter will increment by
-//minimum of 10 commits
-//branch for each feature
-//branch commits spaced out
-//repo should show development
-
-//repo should show:
-//week 8 skeleton must be finished
-//week 9 core logic must be finished
-//week 10 must be finished
-//PROGRESSION
-//NO VIBE CODING
-
-//someone should be able to go to site and learn how it is done so that they can add it to their project
