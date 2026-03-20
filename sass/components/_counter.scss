@@ -1,18 +1,65 @@
+@use '../abstracts';
+
 .counter {
-    border: solid 1px #c5c5c5;
-    margin-top: 40px;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,.2);
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  }
-  
-  button {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    border: none;
-    padding: 10px;
-    background-color: cadetblue;
-    color: #fff;
-    letter-spacing: 1px;
-  }
+    background-color: #fff; 
+    max-width: 400px;
+    margin: 80px auto; 
+    padding: 40px;
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    //button spacing
+    display: flex;           
+    flex-wrap: wrap;         
+    justify-content: center; 
+    gap: 15px;
+
+    h2 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: lighten(abstracts.$text-colour, 20%);
+        margin-bottom: 30px;
+    }
+
+    .count-display {
+        font-size: 5rem;
+        font-weight: 700;
+        margin: 20px 0;
+        color: abstracts.$text-colour;
+    }
+    
+    button {
+        flex: 1; 
+        padding: 15px 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: abstracts.$primary;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: darken(abstracts.$primary, 10%);
+            transform: translateY(-2px); // Subtle lift on hover
+            box-shadow: 0 5px 15px rgba(95, 158, 160, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        &.inactive {
+            background-color: #e0e0e0;
+            color: #a0a0a0;
+            pointer-events: none;
+            transform: none;
+            box-shadow: none;
+        }
+    }
+} 
