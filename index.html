@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>OOP Counter</title>
+    <title>OOP Counter | Documentation & Demo</title>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7COpen+Sans" rel="stylesheet" type="text/css">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -19,9 +19,59 @@
 
 <body>
     <div class="grid-con">
-        <div id="counter-container1" class="counter col-span-full m-col-span-6"></div>
-        <div id="counter-container2" class="counter col-span-full m-col-span-6"></div>
-        <div id="counter-container3" class="counter col-span-full m-col-span-6"></div>
+        <header class="col-span-full">
+            <h1>OOP Counter</h1>
+            <p>State-Driven Documentation</p>
+        </header>
+
+        <section class="col-span-full m-col-span-6">
+            <h2>Overview</h2>
+            <p>The <strong>Counter Class</strong> is an Object-Oriented state management tool. It solves the problem of manual DOM manipulation by encapsulating logic (increment, decrement, and reset) within a single, reusable class.</p>
+            <p>By using class-based builds, we can spawn infinite independent counters on a single page without code duplications.</p>
+        </section>
+
+        <section class="col-span-full m-col-span-6">
+            <h2>How To Use It</h2>
+            <div class="code-box">
+                <p><strong>HTML Markup:</strong></p>
+                <code>&lt;div id="container" class="counter"&gt;&lt;/div&gt;</code>
+                
+                <p><strong>Instantiation:</strong></p>
+                <code>new Counter('#container', 10, 4);</code>
+                
+                <p><strong>Parameters:</strong> <code>(targetID, startValue, stepValue)</code></p>
+            </div>
+        </section>
+
+        <div class="col-span-full"><hr></div>
+
+        <main class="col-span-full">
+            <h2 class="section-title">Live Demos</h2>
+
+            <div class="grid-con">
+                <article class="col-span-full m-col-span-4 demo-card">
+                    <h3>Counter 1</h3>
+                    <p>Start: 10 | Step: 4</p>
+                    <div id="counter-container1" class="counter"></div>
+                </article>
+
+                <article class="col-span-full m-col-span-4 demo-card">
+                    <h3>Counter 2</h3>
+                    <p>Start: 0 | Step: 5</p>
+                    <div id="counter-container2" class="counter"></div>
+                </article>
+
+                <article class="col-span-full m-col-span-4 demo-card">
+                    <h3>Counter 3</h3>
+                    <p>Start: 7 | Step: 7</p>
+                    <div id="counter-container3" class="counter"></div>
+                </article>
+            </div>
+        </main>
+
+        <footer class="col-span-full">
+            <p>&copy; 2026 Amy Armstrong | State-Driven OOP Counter Project</p>
+        </footer>
     </div>
 </body>
 </html>

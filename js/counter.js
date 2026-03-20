@@ -8,27 +8,44 @@ export class Counter {
     mount() {
         const container = document.querySelector(this.selector);
         
+        // button elementfs
         this.display = document.createElement('div');
-        this.button = document.createElement('button');
+        this.incBtn = document.createElement('button');
+        this.decBtn = document.createElement('button');
+        this.resetBtn = document.createElement('button');
+
 
         // add buttons, decrement, reset
         // this.decrement
         // this.reset
 
         // set button text
-        this.button.textContent = "increment";
+        this.incBtn.textContent = "increment";
+        this.decBtn.textContent = "decrement";
+        this.resetBtn.textContent = "reset";
+
+
         // set new button text
         // this.decrement...
         // this.reset...
 
         //append display and button into container div
         container.appendChild(this.display);
-        container.appendChild(this.button);
+        container.appendChild(this.incBtn);
+        container.appendChild(this.decBtn);
+        container.appendChild(this.resetBtn);
+
+
         // append new buttons
         // container.appeandchild(new buttons)
 
         //add event listener
-        this.button.addEventListener("click", ()=> this.increment());
+        this.incBtn.addEventListener("click", ()=> this.increment());
+        this.decBtn.addEventListener("click", ()=> this.decrement());
+        this.resetBtn.addEventListener("click", ()=> this.reset());
+
+
+
         // add new event listeners
 
         // when this first gets mounted update the display
@@ -41,36 +58,54 @@ export class Counter {
         this.update();
     }
 
-        // decrement() {
-            // if statement to prevent lower than 0
-            // this.count--;
-            // this.update();
-        // }
+    decrement() {
+            if (this.count >0) {
+               this.count--;
+            }
+            this.update(); 
+            //if statement to prevent lower than 0
+         }
         
-        // reset() {
-            // this.count = 0;
-        // }
+    reset() {
+            this.count = 0;
+            this.update();
+        }
 
     update() {
         // set initial display content
         this.display.textContent = `Count: ${this.count}`;
-    
+        const isZero = this.count === 0;
         //classList.toggle() this.count===0
+        //if count isat ZERO
+        this.decBtn.classList.toggle('inactive'), this.count === 0;
+        this.resetBtn.classList.toggle('inactive'), this.count === 0;
+
     }
 }
 
 //Counter is Super Class
 //StepCounter is subclass
 
-class StepCounter extends Counter {
-    counstructor(selector, initialValue = 0) {
+export class StepCounter extends Counter {
+    constructor(selector, initialValue = 0, step = 1) {
         super(selector, initialValue);
         //add step property
-        //this.step = step;
+        this.step = step;
 
     }
-    //increment(){}
-    //decrement(){}
+    increment(){
+        this.count += this.step;
+        this.update();
+    }
+
+    decrement(){
+        if (this.count - this.step >= 0) {
+            this.count -= this.step;
+        } else {
+            this.count = 0;
+        }
+        this.update();
+    }
 }
 
 //homework notes
